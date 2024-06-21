@@ -7,17 +7,17 @@ services:
     ports:
       - '8000:80'
     volumes:
-      - ./web/js:/app/web/js
+      - ./basic/web:/app/basic/web
 
   mysql:
     image: mysql:8.0
     restart: always
     container_name: mysql
     environment:
-      MYSQL_DATABASE: ${DB_NAME}
-      MYSQL_USER: ${DB_USERNAME}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: yiidb
+      MYSQL_USER: yii
+      MYSQL_PASSWORD: project
+      MYSQL_ROOT_PASSWORD: admin111
     ports:
       - "3306:3306"
     volumes:
